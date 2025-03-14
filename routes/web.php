@@ -14,6 +14,18 @@ Route::group(['prefix' => 'car_models'], function () {
     Route::delete('/{car_model}', \App\Http\Controllers\CarModel\DeleteController::class)->name('car_models.destroy');
 });
 
+Route::group(['prefix' => 'drivers'], function () {
+    Route::get('/', \App\Http\Controllers\Driver\IndexController::class)->name('drivers.index');
+    Route::get('/create', \App\Http\Controllers\Driver\CreateController::class)->name('drivers.create');
+    Route::post('/', \App\Http\Controllers\Driver\StoreController::class)->name('drivers.store');
+    Route::get('/{driver}', \App\Http\Controllers\Driver\ShowController::class)->name('drivers.show');
+    Route::get('/{driver}/edit', \App\Http\Controllers\Driver\EditController::class)->name('drivers.edit');
+    Route::patch('/{driver}', \App\Http\Controllers\Driver\UpdateController::class)->name('drivers.update');
+    Route::delete('/{driver}', \App\Http\Controllers\Driver\DeleteController::class)->name('drivers.destroy');
+});
+
+
+
 //Route::get('/', function () {
 //    return view('welcome');
 //});

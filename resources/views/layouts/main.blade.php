@@ -29,7 +29,7 @@
 <!-- Main Sidebar Container -->
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="index3.html" class="brand-link">
+    <a href="{{ route('main.index') }}" class="brand-link">
         <span class="brand-text font-weight-light">AdminLTE 3</span>
     </a>
 
@@ -42,6 +42,12 @@
                     <a href="{{ route('car_models.index') }}" class="nav-link">
                         <i class="nav-icon fas fa-car"></i>
                         <p>Модель авто</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ route('drivers.index') }}" class="nav-link">
+                        <i class="nav-icon fas fa-user-cog"></i>
+                        <p>Водії</p>
                     </a>
                 </li>
             </ul>
@@ -77,14 +83,20 @@
 <!-- jQuery UI 1.11.4 -->
 <script src="{{ asset('adminlte/plugins/jquery-ui/jquery-ui.min.js') }}"></script>
 <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
-<script>
-    $.widget.bridge('uibutton', $.ui.button)
-</script>
 <!-- Bootstrap 4 -->
 <script src="{{ asset('adminlte/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 <!-- overlayScrollbars -->
 <script src="{{ asset('adminlte/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js') }}"></script>
+<script src="{{ asset('adminlte/plugins/bs-custom-file-input/bs-custom-file-input.min.js') }}"></script>
 <!-- AdminLTE App -->
 <script src="{{ asset('adminlte/dist/js/adminlte.js') }}"></script>
+
+<script>
+    $(function () {
+        bsCustomFileInput.init();
+    });
+    $.widget.bridge('uibutton', $.ui.button)
+</script>
+
 </body>
 </html>
